@@ -1,17 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
   return (
     <nav className="flex bg-white">
-      <div className="flex container py-4 px-8 items-center justify-between ">
-        <Link href="/">
-          <h1 className="text-xl font-bold">AutoDeal</h1>
-        </Link>
+      <div className="flex container py-4 px-20 items-center justify-between ">
         <div>
-          <ul className="flex gap-2">
-            <li>Daftar</li> / <li>Masuk</li>
-          </ul>
+          <Link href="/">
+            <Image src="/images/logo.png" alt="" width={158} height={28} />
+          </Link>
+        </div>
+        <div>
+          <button
+            class="px-4 py-2  rounded-lg  bg-[] text-white"
+            type="submit"
+          >
+            Masuk/Daftar
+          </button>
         </div>
       </div>
     </nav>
