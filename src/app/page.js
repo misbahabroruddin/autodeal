@@ -4,14 +4,12 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-
-    <div className="min-h-screen bg-slate-200">
+    <section className="min-h-screen w-screen">
       <Navbar />
-      <div className="px-20">
-      <HeroSection />
-      <CardProducts/>
-
-      </div>
-    </div>
-  )
+      <main className="px-20 max-lg:px-[20px]">
+        <HeroSection />
+        <CardProducts />
+      </main>
+    </section>
+  );
 }
