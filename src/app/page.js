@@ -1,5 +1,5 @@
 import CardProducts from "@/components/CardProducts";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/Home/HeroSection";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {

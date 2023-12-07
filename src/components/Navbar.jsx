@@ -11,7 +11,7 @@ import HamburgerIcon from "../../public/svgs/hamburger.svg";
 
 const Navbar = () => {
   return (
-    <nav className="fixed flex w-screen items-center justify-center bg-white ">
+    <nav className="fixed flex w-screen items-center justify-center bg-white font-quicksand">
       {/* Navbar Content */}
       <div className="relative w-full items-center justify-between px-[80px] py-[18px] max-lg:px-[20px] max-md:flex-col md:flex">
         {/* Title */}
@@ -74,7 +74,7 @@ const Navbar = () => {
         {/* Login Button */}
         <div className="max-md:hidden">
           <button
-            class="flex items-center justify-center gap-2 rounded-lg bg-[#FCD02F]  p-[12px]  text-[14px] text-black"
+            className="flex items-center justify-center gap-2 rounded-lg bg-[#FCD02F]  p-[12px]  text-[14px] text-black"
             type="submit"
           >
             <FaUnlockKeyhole />
