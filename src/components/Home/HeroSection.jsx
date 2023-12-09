@@ -14,7 +14,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="relative my-[30px] mt-[120px] flex  flex-col overflow-hidden rounded-xl  bg-[#333333] p-[20px] font-quicksand max-md:mt-[140px] lg:p-[25px]">
+    <div className="relative my-[30px] mt-[120px] flex  flex-col overflow-hidden rounded-xl bg-[#333333]  p-[20px] font-quicksand  max-md:mt-[140px] lg:p-[25px]">
       {/* Decoration */}
       <div className="z-1 absolute right-[5%]   h-[124.08px] origin-top-left rotate-[8.21deg]  rounded-2xl border-[20px] border-[#2D2D2D] bg-[#282828] max-md:hidden md:top-[-85%]  md:w-[733.01px] lg:top-[-70%] lg:w-[800px] xl:top-[-80%] xl:h-[150px] xl:w-[950px]" />
 
@@ -42,21 +42,24 @@ const HeroSection = () => {
           {/* <div className="r absolute right-0 h-full w-10 bg-[#282828]/80 " /> */}
         </div>
         {/* Arrow Button */}
-        <div className="flex items-center gap-[6px] max-lg:hidden">
-          <button>
+        <div className="z-0 flex items-center gap-[6px] max-lg:hidden">
+          <button className="active:scale-95">
             <Image
               width={40}
               height={40}
               alt="arrow-kiri"
               src="/svgs/arrow-kiri.svg"
+              className="rounded-full object-contain"
             />
           </button>
-          <button>
+
+          <button className="active:scale-95">
             <Image
               width={40}
               height={40}
               alt="arrow-kanan"
               src="/svgs/arrow-kanan.svg"
+              className="object-contain"
             />
           </button>
         </div>

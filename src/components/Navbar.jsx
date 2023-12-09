@@ -3,15 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 import { FaUnlockKeyhole } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
-
-import SearchIcon from "../../public/svgs/search.svg";
-import LokasiIcon from "../../public/svgs/lokasi.svg";
-import HamburgerIcon from "../../public/svgs/hamburger.svg";
 
 const Navbar = () => {
   return (
-    <nav className="fixed flex w-screen items-center justify-center bg-white font-quicksand">
+    <nav className="fixed z-10 flex w-screen items-center justify-center bg-white font-quicksand">
       {/* Navbar Content */}
       <div className="relative w-full items-center justify-between px-[80px] py-[18px] max-lg:px-[20px] max-md:flex-col md:flex">
         {/* Title */}
@@ -23,9 +18,11 @@ const Navbar = () => {
           {/* Hamburger Icon */}
           <button>
             <Image
+              width={22}
+              height={22}
               className="sticky md:hidden"
               alt="hamburger"
-              src={HamburgerIcon}
+              src="/images/hamburger-menu.png"
             />
           </button>
         </div>
@@ -39,11 +36,11 @@ const Navbar = () => {
           <div className=" flex items-center rounded-bl-lg rounded-tl-lg bg-[#F4F5F7] text-xs">
             <div className="flex h-full items-center px-[10px]">
               <Image
-                width={25}
-                height={25}
-                className="h-5 w-full"
-                alt="lokasi"
-                src={LokasiIcon}
+                width={20}
+                height={20}
+                className="h-5 w-full object-contain"
+                alt="map"
+                src="/svgs/map.svg"
               />
             </div>
             <input
@@ -62,10 +59,11 @@ const Navbar = () => {
             />
             <div className="flex h-full items-center  rounded-br-lg rounded-tr-lg bg-[#F4F5F7] px-[16px] max-sm:hidden">
               <Image
-                width={25}
-                className="w-full"
+                width={22}
+                height={22}
+                className="w-full object-contain"
                 alt="search"
-                src={SearchIcon}
+                src="/svgs/search.svg"
               />
             </div>
           </div>
