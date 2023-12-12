@@ -1,12 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useState } from "react";
 
 import { FaUnlockKeyhole } from "react-icons/fa6";
 
 const Navbar = () => {
+  let isLogged = true;
+
+  const [profileClicked, setProfileClicked] = useState(false);
+
+  const handleProfileClicked = useCallback(() => {
+    setProfileClicked(!profileClicked);
+  }, [profileClicked]);
+
+  const profleClickedIcon = [
+    { src: "/svgs/profile.svg", alt: "Profil" },
+    { src: "/svgs/gear.svg", alt: "Pengaturan" },
+    { src: "/svgs/help.svg", alt: "Bantuan" },
+    { src: "/svgs/signOut.svg", alt: "Keluar" },
+  ];
+
   return (
-    <nav className="fixed z-10 flex w-screen items-center justify-center bg-white font-quicksand">
+    <nav className="fixed z-10  flex w-screen items-center justify-center bg-white font-quicksand">
       {/* Navbar Content */}
       <div className="relative w-full items-center justify-between px-[80px] py-[18px] max-lg:px-[20px] max-md:flex-col md:flex">
         {/* Title */}
@@ -30,7 +47,7 @@ const Navbar = () => {
         {/* Search */}
         <form
           action=""
-          className="flex w-full gap-[2px] max-md:mt-[10px] md:w-[400px] xl:w-[634px]"
+          className="flex w-full gap-[2px] max-md:mt-[10px] md:w-[350px] xl:w-[600px]"
         >
           {/* Cari Lokasi */}
           <div className=" flex items-center rounded-bl-lg rounded-tl-lg bg-[#F4F5F7] text-xs">
@@ -71,15 +88,79 @@ const Navbar = () => {
 
         {/* Login Button */}
         <div className="max-md:hidden">
-          <button
-            className="flex items-center justify-center gap-2 rounded-lg bg-[#FCD02F]  p-[12px]  text-[14px] text-black"
-            type="submit"
-          >
-            <FaUnlockKeyhole />
-            <h5 className="text-sm font-semibold">Masuk/Daftar</h5>
-          </button>
+          {isLogged ? (
+            <div className="flex items-center gap-[30px]">
+              <button onClick={handleProfileClicked}>
+                <Image
+                  width={44}
+                  height={44}
+                  className="rounded-full"
+                  src="/images/author.png"
+                  alt="profile"
+                />
+              </button>
+
+              <div className="h-6 border border-neutral-200" />
+
+              <Image
+                width={20}
+                height={20}
+                alt="heart-outline"
+                src="/svgs/heart-outline-navbar.svg"
+              />
+
+              <div className="relative">
+                <Image width={20} height={20} alt="bell" src="/svgs/bell.svg" />
+                <div className="absolute right-[0px] top-[-2px] h-2 w-2 rounded-full bg-rose-500" />
+              </div>
+            </div>
+          ) : (
+            <button
+              className="flex items-center justify-center gap-2 rounded-lg bg-[#FCD02F]  p-[12px]  text-[14px] text-black"
+              type="submit"
+            >
+              <FaUnlockKeyhole />
+              <h5 className="text-sm font-semibold">Masuk/Daftar</h5>
+            </button>
+          )}
         </div>
       </div>
+
+      {/* Profile Clicked */}
+      {profileClicked && (
+        <div className="absolute bottom-[-150px] right-[100px] h-[140px] w-[280px] rounded-lg bg-white  p-[20px] max-lg:hidden">
+          {/* Halo Account */}
+          <div className="px-[15px]">
+            <h3 className="text-sm font-medium text-neutral-400">Halo,</h3>
+            <h3 className="text-base font-medium text-zinc-800">
+              Duran Slaytone
+            </h3>
+          </div>
+
+          <div className="mt-[14px] w-full border border-neutral-200" />
+
+          <div className="mt-2 flex w-full items-center justify-between px-[15px]">
+            {profleClickedIcon.map((icon, i) => (
+              <button
+                className="flex flex-col items-center justify-center gap-2"
+                key={i}
+              >
+                <Image
+                  className="aspect-square object-contain"
+                  width={20}
+                  height={20}
+                  alt={icon.alt}
+                  src={icon.src}
+                />
+
+                <span className="text-[10px] font-semibold text-neutral-400">
+                  {icon.alt}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
