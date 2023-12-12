@@ -23,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed z-10  flex w-screen items-center justify-center bg-white font-quicksand">
+    <nav className="fixed top-0 z-10 flex w-screen items-center justify-center bg-white font-quicksand">
       {/* Navbar Content */}
       <div className="relative w-full items-center justify-between px-[80px] py-[18px] max-lg:px-[20px] max-md:flex-col md:flex">
         {/* Title */}

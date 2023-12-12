@@ -59,7 +59,7 @@ const ProductCard = () => {
                 width={12}
                 height={12}
                 alt="mata"
-                src="/images/mata.png"
+                src="/svgs/mata.svg"
                 className="aspect-square w-[16px] object-contain"
               />
               <p className="text-[10px] font-medium text-neutral-400 md:text-xs">
