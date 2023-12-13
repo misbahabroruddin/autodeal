@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 z-10 flex w-screen items-center justify-center bg-white font-quicksand">
       {/* Navbar Content */}
-      <div className="relative w-full items-center justify-between px-[80px] py-[18px] max-lg:px-[20px] max-md:flex-col md:flex">
+      <div className="relative mx-3 w-full items-center justify-between  py-[18px] max-xl:px-[20px] max-md:flex-col md:flex xl:w-[1280px]">
         {/* Title */}
         <div className=" flex justify-between">
           <Link href="/">

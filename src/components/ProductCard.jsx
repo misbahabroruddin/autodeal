@@ -12,7 +12,7 @@ const ProductCard = () => {
 
   return (
     <>
-      <div className="relative w-[42vw] rounded-xl bg-white font-inter text-[10px] font-medium text-neutral-400 sm:w-[30vw] md:w-[29.5vw] lg:w-[19.5vw] xl:w-[20.5vw]">
+      <div className="relative mt-[10px] w-[42vw] rounded-xl bg-white font-inter text-[10px] font-medium text-neutral-400 sm:w-[30vw] md:w-[29.5vw] lg:w-[22vw] xl:w-[300px]">
         <div className=" relative w-full">
           <Image
             className="w-full rounded-t-xl object-cover"
@@ -86,7 +86,7 @@ const ProductCard = () => {
               width={12}
               height={12}
               alt=".."
-              src="/images/map-card.png"
+              src="/svgs/map.svg"
             />
 
             <p className="text-[10px] font-medium text-neutral-400 md:text-xs">

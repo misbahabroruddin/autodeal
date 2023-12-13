@@ -5,7 +5,7 @@ import ProductList from "@/components/ProductList";
 
 export default function Home() {
   return (
-    <section className="w-full px-20 max-lg:px-[20px]">
+    <section className="  w-full max-xl:px-[20px] xl:w-[1280px]">
       <HeroSection />
       <ProductList
         srcImage="/svgs/new.svg"

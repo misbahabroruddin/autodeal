@@ -14,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${quickSand.variable}`}>
+      <body
+        className={`${inter.variable} ${quickSand.variable} flex w-screen justify-center`}
+      >
         <Navbar />
         {children}
         <Footer />

@@ -22,7 +22,7 @@ const ProductList = ({ textIklan, lihatSemua, srcImage }) => {
         <a href="">{lihatSemua}</a>
       </div>
 
-      <div className="mt-[30px] flex flex-wrap justify-between  gap-[10px]  md:gap-[20px]">
+      <div className="mt-[30px] flex flex-wrap justify-between md:gap-[20px]">
         {/* Map */}
         <ProductCard />
         <ProductCard />
