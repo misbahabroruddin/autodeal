@@ -89,7 +89,8 @@ const Navbar = () => {
         {/* Login Button */}
         <div className="max-md:hidden">
           {isLogged ? (
-            <div className="flex items-center gap-[30px]">
+            <div className="relative flex items-center gap-[30px]">
+              {/* Profile Picture */}
               <button onClick={handleProfileClicked}>
                 <Image
                   width={44}
@@ -99,6 +100,44 @@ const Navbar = () => {
                   alt="profile"
                 />
               </button>
+
+              {/* Profile Clicked */}
+              {profileClicked && (
+                <div className="absolute bottom-[-150px] right-[10px] h-[140px] w-[280px] rounded-lg border bg-white  p-[20px] max-lg:hidden">
+                  {/* Halo Account */}
+                  <div className="px-[15px]">
+                    <h3 className="text-sm font-medium text-neutral-400">
+                      Halo,
+                    </h3>
+                    <h3 className="text-base font-medium text-zinc-800">
+                      Duran Slaytone
+                    </h3>
+                  </div>
+
+                  <div className="mt-[14px] w-full border border-neutral-200" />
+
+                  <div className="mt-2 flex w-full items-center justify-between px-[15px]">
+                    {profleClickedIcon.map((icon, i) => (
+                      <button
+                        className="flex flex-col items-center justify-center gap-2"
+                        key={i}
+                      >
+                        <Image
+                          className="aspect-square object-contain"
+                          width={20}
+                          height={20}
+                          alt={icon.alt}
+                          src={icon.src}
+                        />
+
+                        <span className="text-[10px] font-semibold text-neutral-400">
+                          {icon.alt}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="h-6 border border-neutral-200" />
 
@@ -125,42 +164,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {/* Profile Clicked */}
-      {profileClicked && (
-        <div className="absolute bottom-[-150px] right-[100px] h-[140px] w-[280px] rounded-lg bg-white  p-[20px] max-lg:hidden">
-          {/* Halo Account */}
-          <div className="px-[15px]">
-            <h3 className="text-sm font-medium text-neutral-400">Halo,</h3>
-            <h3 className="text-base font-medium text-zinc-800">
-              Duran Slaytone
-            </h3>
-          </div>
-
-          <div className="mt-[14px] w-full border border-neutral-200" />
-
-          <div className="mt-2 flex w-full items-center justify-between px-[15px]">
-            {profleClickedIcon.map((icon, i) => (
-              <button
-                className="flex flex-col items-center justify-center gap-2"
-                key={i}
-              >
-                <Image
-                  className="aspect-square object-contain"
-                  width={20}
-                  height={20}
-                  alt={icon.alt}
-                  src={icon.src}
-                />
-
-                <span className="text-[10px] font-semibold text-neutral-400">
-                  {icon.alt}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

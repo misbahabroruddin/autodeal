@@ -26,18 +26,6 @@ const CategoriesSection = () => {
     { scr: "/icons/pawprint.png", alt: "pawprint" },
   ];
 
-  const SwiperButtonNext = ({ children }) => {
-    const swiper = useSwiper();
-
-    console.log({ swiper });
-
-    return (
-      <button className="active:scale-95" onClick={() => swiper.slideNext()}>
-        {children}
-      </button>
-    );
-  };
-
   const swiperRef = useRef();
 
   return (
