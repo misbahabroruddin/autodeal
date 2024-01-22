@@ -8,8 +8,10 @@ import Deskripsi from "./_components/Deskripsi"
 import Title from "./_components/Title"
 import { FotoProduk } from "./_components/FotoProduk"
 import Product from "./_components/Product"
+import { useState } from "react"
 
 export default function DetailIklan() {
+  const [isLogin, setIsLogin] = useState(false)
   return (
     <div className="mt-[135px] font-inter md:mt-36">
       {/* Breadcrumb */}
@@ -42,7 +44,7 @@ export default function DetailIklan() {
           <Deskripsi />
         </div>
         {/* aside profile */}
-        <DetailProfil />
+        <DetailProfil isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
       {/* iklan */}
       <div className="mt-8 w-full px-5 lg:px-0">
